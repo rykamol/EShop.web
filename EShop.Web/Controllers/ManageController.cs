@@ -7,6 +7,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using EShop.Web.Models;
+using EShop.Web.ViewModels;
 
 namespace EShop.Web.Controllers
 {
