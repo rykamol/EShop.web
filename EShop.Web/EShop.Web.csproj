@@ -197,12 +197,17 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\ProductsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Migrations\201903311624200_add product model.cs" />
     <Compile Include="Migrations\201903311624200_add product model.Designer.cs">
       <DependentUpon>201903311624200_add product model.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201903311811574_drop column user_name form application user.cs" />
+    <Compile Include="Migrations\201903311811574_drop column user_name form application user.Designer.cs">
+      <DependentUpon>201903311811574_drop column user_name form application user.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\EmportType.cs" />
@@ -273,6 +278,11 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Products\Create.cshtml" />
+    <Content Include="Views\Products\Delete.cshtml" />
+    <Content Include="Views\Products\Details.cshtml" />
+    <Content Include="Views\Products\Edit.cshtml" />
+    <Content Include="Views\Products\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -293,6 +303,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201903311624200_add product model.resx">
       <DependentUpon>201903311624200_add product model.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903311811574_drop column user_name form application user.resx">
+      <DependentUpon>201903311811574_drop column user_name form application user.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
