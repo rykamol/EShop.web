@@ -8,9 +8,8 @@
 <h2>Index</h2>
 
 <p>
-    @Html.ActionLink("Add New Product", "Create", null,new {@class="btn btn-primary btn-lg"})
+    @Html.ActionLink("Create New", "Create")
 </p>
- 
 <table class="table">
     <tr>
         <th>
@@ -27,6 +26,9 @@
         </th>
         <th>
             @Html.DisplayNameFor(model => model.BuyFrom)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PurchaseDate)
         </th>
         <th></th>
     </tr>
@@ -47,6 +49,9 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.BuyFrom)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PurchaseDate)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |

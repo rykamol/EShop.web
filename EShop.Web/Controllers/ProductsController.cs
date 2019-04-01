@@ -10,7 +10,6 @@ using EShop.Web.Models;
 
 namespace EShop.Web.Controllers
 {
-    [Authorize]
     public class ProductsController : Controller
     {
         private EshopDbContext db = new EshopDbContext();
@@ -44,10 +43,10 @@ namespace EShop.Web.Controllers
 
         // POST: Products/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Name,UnitPrice,Stock,Vat,BuyFrom")] Product product)
+        public ActionResult Create([Bind(Include = "Id,Name,UnitPrice,Stock,Vat,BuyFrom,PurchaseDate")] Product product)
         {
             if (ModelState.IsValid)
             {
@@ -76,10 +75,10 @@ namespace EShop.Web.Controllers
 
         // POST: Products/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Name,UnitPrice,Stock,Vat,BuyFrom")] Product product)
+        public ActionResult Edit([Bind(Include = "Id,Name,UnitPrice,Stock,Vat,BuyFrom,PurchaseDate")] Product product)
         {
             if (ModelState.IsValid)
             {

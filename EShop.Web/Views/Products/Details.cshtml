@@ -51,9 +51,17 @@
             @Html.DisplayFor(model => model.BuyFrom)
         </dd>
 
+        <dt>
+            @Html.DisplayNameFor(model => model.PurchaseDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PurchaseDate)
+        </dd>
+
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit",null, new {@class="btn btn-primary", id = Model.Id }) |
-    @Html.ActionLink("Back to Products", "Index",null,new{@class="btn btn-primary"})
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
 </p>

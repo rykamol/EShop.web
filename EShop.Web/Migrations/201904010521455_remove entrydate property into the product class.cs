@@ -3,16 +3,16 @@ namespace EShop.Web.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class dropcolumnuser_nameformapplicationuser : DbMigration
+    public partial class removeentrydatepropertyintotheproductclass : DbMigration
     {
         public override void Up()
         {
-            DropColumn("dbo.AspNetUsers", "User_Name");
+            DropColumn("dbo.Products", "EntryDate");
         }
         
         public override void Down()
         {
-            AddColumn("dbo.AspNetUsers", "User_Name", c => c.String());
+            AddColumn("dbo.Products", "EntryDate", c => c.DateTime(nullable: false));
         }
     }
 }

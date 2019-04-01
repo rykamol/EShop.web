@@ -7,13 +7,13 @@ namespace EShop.Web.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class dropcolumnuser_nameformapplicationuser : IMigrationMetadata
+    public sealed partial class addtwodatepropertyintotheproductclass : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(dropcolumnuser_nameformapplicationuser));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(addtwodatepropertyintotheproductclass));
         
         string IMigrationMetadata.Id
         {
-            get { return "201903311811574_drop column user_name form application user"; }
+            get { return "201904010501378_add two date property into the product class"; }
         }
         
         string IMigrationMetadata.Source
