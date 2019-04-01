@@ -6,14 +6,14 @@ namespace EShop.Web.Migrations
     using System.Data.Entity.Migrations.Infrastructure;
     using System.Resources;
     
-    [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class removeentrydatepropertyintotheproductclass : IMigrationMetadata
+    [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
+    public sealed partial class propertytypechangetosaleproductclass : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(removeentrydatepropertyintotheproductclass));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(propertytypechangetosaleproductclass));
         
         string IMigrationMetadata.Id
         {
-            get { return "201904010521455_remove entrydate property into the product class"; }
+            get { return "201904011749507_property type change to saleproduct class"; }
         }
         
         string IMigrationMetadata.Source

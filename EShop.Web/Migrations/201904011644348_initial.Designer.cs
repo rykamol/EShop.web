@@ -6,14 +6,14 @@ namespace EShop.Web.Migrations
     using System.Data.Entity.Migrations.Infrastructure;
     using System.Resources;
     
-    [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class addtwodatepropertyintotheproductclass : IMigrationMetadata
+    [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
+    public sealed partial class initial : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(addtwodatepropertyintotheproductclass));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(initial));
         
         string IMigrationMetadata.Id
         {
-            get { return "201904010501378_add two date property into the product class"; }
+            get { return "201904011644348_initial"; }
         }
         
         string IMigrationMetadata.Source

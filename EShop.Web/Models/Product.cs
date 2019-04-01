@@ -32,5 +32,15 @@ namespace EShop.Web.Models
         [DataType(DataType.Date)]
         [Display(Name = "Purchase Date")]
         public DateTime PurchaseDate { get; set; }
+
+        //public void UpdateProduct(int modelQuantity)
+        //{
+        //    Stock -= modelQuantity;
+        //    PurchaseDate = PurchaseDate;
+        //    BuyFrom = BuyFrom;
+        //    Vat = Vat;
+        //    UnitPrice = UnitPrice;
+        //    Name = Name;
+        //}
     }
 }

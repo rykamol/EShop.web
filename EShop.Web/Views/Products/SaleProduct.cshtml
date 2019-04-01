@@ -1,0 +1,107 @@
+﻿@using System.Web.Mvc.Html
+@model EShop.Web.ViewModels.SaleProductViewModel
+@{
+    ViewBag.Title = "SaleProduct";
+}
+
+<h2>SaleProduct</h2>
+
+
+@using (Html.BeginForm("SaleProduct","Products",FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>SaleProduct</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ProductId, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.ProductId, (SelectList)ViewBag.Products, "--Select One--", new { @class = "form-control col-md-2" })
+                @Html.ValidationMessageFor(model => model.ProductId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.Label("Available", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.Editor("Available", new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Quantity, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Quantity, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Quantity, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.TotalPrice, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.TotalPrice, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                @Html.ValidationMessageFor(model => model.TotalPrice, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        @*<div class="form-group">
+                @Html.LabelFor(model => model.SaleDate, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.SaleDate, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.SaleDate, "", new { @class = "text-danger" })
+                </div>
+            </div>*@
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Sale Now" class="btn btn-primary" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script>
+        $(document).ready(function(){
+            $("#ProductId").change(function() {
+                var ProductId = $("#ProductId").val();
+                var json = { ProductId: ProductId };
+                $.ajax({
+                    url: "@Url.Action("GetAvailableProductById", "Products")",
+                    data: JSON.stringify(json),
+                    dataType: "json",
+                    contentType: "application/json",
+                    type: "POST",
+                    success: function (result) {
+                        $("#Available").val(result.Available);
+                    },
+                    error: function (response) {
+                    }
+                });
+            });
+
+            $("#Quantity").change(function() {
+                var Quantity = $("#Quantity").val();
+                var ProductId = $("#ProductId").val();
+                var json = { Quantity: Quantity, ProductId: ProductId };
+                $.ajax({
+                    url: "@Url.Action("GetTotalPriceByQuantity", "Products")",
+                    data: JSON.stringify(json),
+                    dataType: "json",
+                    contentType: "application/json",
+                    type: "POST",
+                    success: function (result) {
+                        $("#TotalPrice").val(result.TotalPrice);
+                    },
+                    error: function (response) {
+                    }
+                });
+            });
+        });
+    </script>
+    
+}
